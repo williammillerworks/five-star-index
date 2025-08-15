@@ -1,0 +1,21 @@
+title: "Five Star Index"
+description: "A minimal Markdown blog by Sunho"
+# For project pages (username.github.io/repo): set your username and repo here
+url: "https://<your-username>.github.io"   # change to your GitHub username
+baseurl: "/five-star-index"                # change to your repo name; set to "" for user/organization site
+
+timezone: Asia/Seoul
+markdown: kramdown
+permalink: /posts/:year-:month-:day-:slug/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Apply post layout by default
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post

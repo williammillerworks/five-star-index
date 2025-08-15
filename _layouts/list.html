@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<section class="post-list">
+  {% for post in site.posts %}
+  <article class="post-card">
+    <a class="title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    <div class="meta">
+      <span class="stars">
+        {% assign r = post.rating | default: 5 | plus: 0 %}
+        {% for i in (1..r) %}★{% endfor %}
+        {% assign remaining = 5 | minus: r %}
+        {% if remaining > 0 %}{% for i in (1..remaining) %}☆{% endfor %}{% endif %}
+      </span>
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b %Y" }}</time>
+    </div>
+  </article>
+  {% endfor %}
+</section>

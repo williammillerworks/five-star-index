@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+  <link rel="icon" href="{{ '/assets/favicon.ico' | relative_url }}">
+  {% seo %}
+</head>
+<body class="{{ page.layout }}">
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      <nav class="meta">Star · Now</nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>Edited by Sunho</span>
+      <span>© {{ "now" | date: "%Y" }}</span>
+    </div>
+  </footer>
+  <script src="{{ '/assets/js/app.js' | relative_url }}"></script>
+</body>
+</html>
